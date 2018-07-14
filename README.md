@@ -4,7 +4,7 @@ A basic blockchain server written in Ruby to understand the concepts.
 
 ## Test for a full resolution flow
 
-If you want to test the full service using two servers and resolution, you will need 3 shells and then type:
+If you want to test the full service using two servers and resolution, you will need 3 shells with the home directory of this app and then type:
 
 ### Shell 1
 ```
@@ -24,5 +24,7 @@ curl -X GET 'http://localhost:4568/add_transaction?from=Mike&to=Tommy&amount=100
 curl -X GET 'http://localhost:4567/add_transaction?from=Mike&to=John&amount=100'
 curl -X GET http://localhost:4567/mine
 curl -X GET http://localhost:4568/mine
+curl -X GET http://localhost:4568/chain
 curl -X GET http://localhost:4568/resolve
+curl -X GET http://localhost:4568/chain
 ```
