@@ -18,12 +18,12 @@ class RubyFuCoin
       )
     end
 
-    def create_new_block(from, to, amount, previous_block)
+    def create_new_block(args, previous_block)
       coin_hash = {
-        from: from,
-        to: to,
-        amount: amount,
-        index: previous_block[:index],
+        from: args[:from],
+        to: args[:to],
+        amount: args[:amount],
+        index: previous_block[:index] + 1,
         previous_hash: previous_block[:current_hash]
       }
       current_hash, nonce = mine(coin_hash)
